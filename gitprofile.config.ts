@@ -54,7 +54,7 @@ const CONFIG = {
       ],
     },
   },
-  seo: { title: 'Portfolio of Ariful Alam', description: '', imageURL: '' },
+  seo: { title: 'Duy Pham Portfolio', description: '', imageURL: '' },
   social: {
     linkedin: 'duy-pham2108',
     x: 'DuyTruongPham',
