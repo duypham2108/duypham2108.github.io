@@ -58,8 +58,6 @@ const CONFIG = {
     email: 'phamduychv94@gmail.com',
   },
   resume: {
-    fileUrl:
-     // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
     'Computational biology',
