@@ -71,7 +71,7 @@ const CONFIG = {
   experiences: [
     {
       company:
-        'Teichmann Lab, Camridge Stem Cell Institute - University of Cambridge',
+        'Teichmann Lab, Cambridge Stem Cell Institute - University of Cambridge',
       position: 'Senior Computational Biologist/Postdoctoral Researcher',
       from: 'September 2023',
       to: 'Present',
@@ -104,7 +104,7 @@ const CONFIG = {
   educations: [
     {
       institution:
-        'Institute for Molecualr Bioscience, University of Queensland',
+        'Institute for Molecular Bioscience, University of Queensland',
       degree: 'PhD',
       from: '2019',
       to: '2023',
