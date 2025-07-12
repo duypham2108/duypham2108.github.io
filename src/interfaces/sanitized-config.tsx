@@ -112,12 +112,26 @@ export interface SanitizedHotjar {
 export interface SanitizedBlogEntry {
   title: string;
   link: string;
-  icon: string;
+  icon:
+    | 'BiDna'
+    | 'BiCode'
+    | 'BiChip'
+    | 'BiArchive'
+    | 'HiOutlineBookOpen'
+    | 'HiOutlineChip'
+    | 'HiOutlineCode';
 }
 
 export interface SanitizedBlogTopic {
   name: string;
-  icon: string;
+  icon:
+    | 'BiDna'
+    | 'BiCode'
+    | 'BiChip'
+    | 'BiArchive'
+    | 'HiOutlineBookOpen'
+    | 'HiOutlineChip'
+    | 'HiOutlineCode';
   entries: SanitizedBlogEntry[];
 }
 

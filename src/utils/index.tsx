@@ -118,15 +118,34 @@ export const getSanitizedConfig = (
         limit: config?.blog?.limit || 5,
         display: !!config?.blog?.username && !!config?.blog?.source,
         topics:
-          config?.blog?.topics?.map((topic) => ({
-            name: topic.name,
-            icon: topic.icon,
-            entries: topic.entries.map((entry) => ({
-              title: entry.title,
-              link: entry.link,
-              icon: entry.icon,
-            })),
-          })) || [],
+          config?.blog?.topics?.map((topic) => {
+            // Validate icon is a valid IconName
+            const validIcons = [
+              'BiDna',
+              'BiCode',
+              'BiChip',
+              'BiArchive',
+              'HiOutlineBookOpen',
+              'HiOutlineChip',
+              'HiOutlineCode',
+            ] as const;
+            type IconName = (typeof validIcons)[number];
+
+            const isValidIcon = (icon: string): icon is IconName =>
+              validIcons.includes(icon as IconName);
+
+            const icon = isValidIcon(topic.icon) ? topic.icon : 'BiCode';
+
+            return {
+              name: topic.name,
+              icon,
+              entries: topic.entries.map((entry) => ({
+                title: entry.title,
+                link: entry.link,
+                icon: isValidIcon(entry.icon) ? entry.icon : 'BiCode',
+              })),
+            };
+          }) || [],
       },
       themeConfig: {
         defaultTheme: config?.themeConfig?.defaultTheme || DEFAULT_THEMES[0],
