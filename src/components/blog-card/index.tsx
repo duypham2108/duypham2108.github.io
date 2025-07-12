@@ -45,7 +45,7 @@ const BlogCard = ({ loading, topics = [] }: BlogCardProps) => {
 
   return (
     <div className="col-span-1 lg:col-span-2">
-      <div className="card bg-white shadow-lg border border-base-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
+      <div className="card bg-white shadow-lg border border-base-200 transition-all duration-300">
         <div className="card-body p-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <div className="flex items-center space-x-4">
