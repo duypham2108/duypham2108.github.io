@@ -265,6 +265,18 @@ interface Hotjar {
   snippetVersion?: number;
 }
 
+interface BlogEntry {
+  title: string;
+  link: string;
+  icon: string;
+}
+
+interface BlogTopic {
+  name: string;
+  icon: string;
+  entries: BlogEntry[];
+}
+
 interface Blog {
   /**
    * medium | dev
@@ -282,6 +294,16 @@ interface Blog {
    * Max is 10
    */
   limit?: number;
+
+  /**
+   * Display custom blog section
+   */
+  display?: boolean;
+
+  /**
+   * Blog topics with entries
+   */
+  topics?: BlogTopic[];
 }
 
 interface ThemeConfig {

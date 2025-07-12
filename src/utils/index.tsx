@@ -117,6 +117,16 @@ export const getSanitizedConfig = (
         source: config?.blog?.source || 'dev',
         limit: config?.blog?.limit || 5,
         display: !!config?.blog?.username && !!config?.blog?.source,
+        topics:
+          config?.blog?.topics?.map((topic) => ({
+            name: topic.name,
+            icon: topic.icon,
+            entries: topic.entries.map((entry) => ({
+              title: entry.title,
+              link: entry.link,
+              icon: entry.icon,
+            })),
+          })) || [],
       },
       themeConfig: {
         defaultTheme: config?.themeConfig?.defaultTheme || DEFAULT_THEMES[0],

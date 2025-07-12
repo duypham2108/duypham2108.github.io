@@ -109,11 +109,24 @@ export interface SanitizedHotjar {
   snippetVersion: number;
 }
 
+export interface SanitizedBlogEntry {
+  title: string;
+  link: string;
+  icon: string;
+}
+
+export interface SanitizedBlogTopic {
+  name: string;
+  icon: string;
+  entries: SanitizedBlogEntry[];
+}
+
 export interface SanitizedBlog {
   display: boolean;
   source: string;
   username: string;
   limit: number;
+  topics?: SanitizedBlogTopic[];
 }
 
 export interface SanitizedThemeConfig {

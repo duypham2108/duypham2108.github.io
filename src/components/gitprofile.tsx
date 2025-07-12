@@ -21,12 +21,9 @@ import DetailsCard from './details-card';
 import SkillCard from './skill-card';
 import ExperienceCard from './experience-card';
 import EducationCard from './education-card';
-import CertificationCard from './certification-card';
 import { GithubProject } from '../interfaces/github-project';
 import GithubProjectCard from './github-project-card';
-import ExternalProjectCard from './external-project-card';
 import BlogCard from './blog-card';
-import Footer from './footer';
 import PublicationCard from './publication-card';
 
 /**
@@ -223,12 +220,6 @@ const GitProfile = ({ config }: { config: Config }) => {
                       experiences={sanitizedConfig.experiences}
                     />
                   )}
-                  {sanitizedConfig.certifications.length !== 0 && (
-                    <CertificationCard
-                      loading={loading}
-                      certifications={sanitizedConfig.certifications}
-                    />
-                  )}
                   {sanitizedConfig.educations.length !== 0 && (
                     <EducationCard
                       loading={loading}
@@ -239,6 +230,12 @@ const GitProfile = ({ config }: { config: Config }) => {
               </div>
               <div className="lg:col-span-2 col-span-1">
                 <div className="grid grid-cols-1 gap-6">
+                  {sanitizedConfig.blog.display && (
+                    <BlogCard
+                      loading={loading}
+                      topics={sanitizedConfig.blog.topics}
+                    />
+                  )}
                   {sanitizedConfig.projects.github.display && (
                     <GithubProjectCard
                       header={sanitizedConfig.projects.github.header}
@@ -254,7 +251,7 @@ const GitProfile = ({ config }: { config: Config }) => {
                       publications={sanitizedConfig.publications}
                     />
                   )}
-                  {sanitizedConfig.projects.external.projects.length !== 0 && (
+                  {/* {sanitizedConfig.projects.external.projects.length !== 0 && (
                     <ExternalProjectCard
                       loading={loading}
                       header={sanitizedConfig.projects.external.header}
@@ -263,27 +260,11 @@ const GitProfile = ({ config }: { config: Config }) => {
                       }
                       googleAnalyticId={sanitizedConfig.googleAnalytics.id}
                     />
-                  )}
-                  {sanitizedConfig.blog.display && (
-                    <BlogCard
-                      loading={loading}
-                      googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
-                      blog={sanitizedConfig.blog}
-                    />
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>
           </div>
-          {sanitizedConfig.footer && (
-            <footer
-              className={`p-4 footer ${BG_COLOR} text-base-content footer-center`}
-            >
-              <div className="card card-sm bg-base-100 shadow-sm">
-                <Footer content={sanitizedConfig.footer} loading={loading} />
-              </div>
-            </footer>
-          )}
         </>
       )}
     </div>
